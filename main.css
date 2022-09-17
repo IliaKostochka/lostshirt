@@ -18,8 +18,8 @@ html, body {
 }
 @font-face {
     font-family: 'alegreya';
-    src: url(/lostshirtsite/sitecontent/lostshirtpsd/fonts/alegreya/alegreyasanssc-black-webfont.woff) format('woff'), 
-    url(/lostshirtsite/sitecontent/lostshirtpsd/fonts/alegreya/alegreyasanssc-black-webfont.woff2) format('woff2');
+    src: url(./lostshirtsite/sitecontent/lostshirtpsd/fonts/alegreya/alegreyasanssc-black-webfont.woff) format('woff'), 
+    url(./lostshirtsite/sitecontent/lostshirtpsd/fonts/alegreya/alegreyasanssc-black-webfont.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,7 +34,7 @@ body {
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/hero.jpg) center center / cover no-repeat;
+    background: url(./lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/hero.jpg) center center / cover no-repeat;
     position: relative;
     margin-bottom: 130px;
 }
@@ -95,15 +95,15 @@ body {
 }
 
 .fade-slider__item--style-tshirts {
-    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_1.png);
+    background-image: url(./lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_1.png);
 }
 
 .fade-slider__item--style-games {
-    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_2.png);
+    background-image: url(./lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_2.png);
 }
 
 .fade-slider__item--style-gifts {
-    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_3.png);
+    background-image: url(./lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_3.png);
 }
 
 
@@ -448,7 +448,7 @@ ul > li {
     margin-left: 30px;
     width: 630px;
     min-height: 480px;
-    background: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/pattern.png) center center / 100%;
+    background: url(./lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/pattern.png) center center / 100%;
     position: relative;
 }
 
@@ -464,11 +464,11 @@ ul > li {
 }
 
 .collections__item--type-man:before {
-    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/collections/collection_man.png);
+    background-image: url(./lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/collections/collection_man.png);
 }
 
 .collections__item--type-woman:before {
-    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/collections/collection_woman.png);
+    background-image: url(./lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/collections/collection_woman.png);
     top: -31%;
     width: 80%;
     left: -25%;
@@ -591,7 +591,7 @@ ul > li {
 }
 
 .final__item--type-media {
-    background: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/pattern.png) center center / 400px;
+    background: url(./lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/pattern.png) center center / 400px;
 }
 
 .final__media--list {
