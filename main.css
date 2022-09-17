@@ -1,0 +1,619 @@
+:root {
+    --yellow: #ffbc2f;
+    --black: #212121;
+    --white: #fff;
+    --red: #ba2c2c;
+    --titlesFont: 'Yanone Kaffeesatz', Arial, sans-serif;
+    --descFont: "Roboto", Arial, sans-serif;
+    --gray: #727272;
+}
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    overflow: hidden;
+    min-width: 1440px;
+
+}
+@font-face {
+    font-family: 'alegreya';
+    src: url(/lostshirtsite/sitecontent/lostshirtpsd/fonts/alegreya/alegreyasanssc-black-webfont.woff) format('woff'), 
+    url(/lostshirtsite/sitecontent/lostshirtpsd/fonts/alegreya/alegreyasanssc-black-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font: 16px / 1.5 var(--descFont);
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    background: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/hero.jpg) center center / cover no-repeat;
+    position: relative;
+    margin-bottom: 130px;
+}
+
+.header {
+    width: 1290px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 29px;
+}
+
+.mail {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.mail__title {
+    margin-bottom: 5px;
+}
+
+.mail__link {
+    background: var(--black);
+    color: var(--yellow);
+    padding: 5px 10px;
+}
+
+.hero__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1140px;
+    height: 72%;
+}
+
+.fade-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.fade-slider__item {
+    background: center center / contain no-repeat;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.fade-slider__item--visible {
+    opacity: 1;
+}
+
+.fade-slider__item--style-tshirts {
+    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_1.png);
+}
+
+.fade-slider__item--style-games {
+    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_2.png);
+}
+
+.fade-slider__item--style-gifts {
+    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/content/hero/slider_pic_3.png);
+}
+
+
+.fade-slider__item--style-tshirts .fade-slider__text {
+    position: absolute;
+    left: 59%;
+    top: 50%;
+    transform: translate(-165%, -53%);
+    white-space: nowrap;
+}
+
+.fade-slider__item--style-games .fade-slider__text {
+    position: absolute;
+    left: 33%;
+    bottom: -25%;
+    transform: translate(-6%, -50%);
+    white-space: nowrap;
+}
+
+.fade-slider__item--style-gifts .fade-slider__text {
+    position: absolute;
+    left: 30%;
+    top: 43%;
+    transform: translate(-62%, 28%);
+    white-space: nowrap;
+}
+
+.lined-text {
+    color: var(--white);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font: 50px / 1 "alegreya", Arial, sans-serif;
+}
+
+.fade-slider__item--style-games .lined-text {
+    align-items: center;
+    rotate: 0.5deg;
+}
+
+.fade-slider__item--style-gifts .lined-text {
+    align-items: center;
+    rotate: 1deg;
+}
+
+.fade-slider__item--style-gifts .lined-text__word--color-yellow {
+    font-size: 35px;
+}
+
+.fade-slider__item--style-games .lined-text__word {
+    rotate: 0.5deg;
+}
+
+.lined-text__word {
+    background: var(--black);
+    padding: 5px 12px;
+}
+
+.fade-slider__item--style-tshirts .lined-text__word:nth-child(2n) {
+    margin-left: 10px;
+}
+
+.lined-text__word--color-yellow {
+    color: var(--yellow);
+}
+
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0px 3% 0 4%;
+    width: 75px;
+    background: var(--black);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: width 300ms;
+}
+
+.sidebar--opened {
+    padding: 0px 3% 0 4%;
+    width: 325px;
+}
+
+.sidebar--opened .sidebar__header {
+    display: flex;
+}
+
+.sidebar__header {
+    position: absolute;
+    display: none;
+    top: 30px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+}
+
+.sidebar__close {
+    position: absolute;
+    top: -4px;
+    right: 30px;
+}
+
+.sidebar__close--icon {
+    fill: var(--yellow);
+    width: 29px;
+    height: 29px;
+}
+
+.sidebar__menu {
+    position: absolute;
+    left: -400px;
+    transition: left 300ms;
+}
+
+.sidebar--opened .sidebar__menu {
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition-delay: .1s;
+}
+
+.sidebar__hamburger {
+    position: absolute;
+    display: flex;
+    top: 29px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.sidebar--opened .sidebar__hamburger {
+    display: none;
+}
+
+.sidebar__hamburger--icon {
+    fill: var(--yellow);
+    width: 29px;
+    height: 29px;
+}
+
+.sidemenu__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.sidemenu__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--yellow);
+    font: 20px var(--titlesFont);
+}
+
+.sidemenu__link:hover {
+    color: var(--red)
+}
+
+.container {
+    margin: 0 auto;
+    width: 1300px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul > li {
+    list-style: none;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.filter__link {
+    font: 24px / 1.3 var(--titlesFont);
+    text-decoration: none;
+    padding: 5px 21px;
+    color: var(--black);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.filter__link:hover {
+    color: var(--red);
+}
+
+.filter__item--active .filter__link {
+    background: var(--black);
+    color: var(--yellow);
+}
+
+.filter__item {
+    margin-right: 29px;
+}
+
+.filter__item:last-child {
+    margin-right: 0;
+}
+
+.products {
+    width: 1290px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 160px;
+}
+
+.products__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -26px;
+}
+
+.products__item {
+    background: var(--yellow);
+    width: 300px;
+    height: 390px;
+    margin-bottom: 35px;
+    margin-left: 26px;
+    position: relative;
+}
+
+.products__pricetag {
+    position: absolute;
+    top: 21px;
+    left: -10px;
+    width: 125px;
+    border-bottom: 42px solid var(--black);
+    border-left: 6px solid transparent;
+    border-right: 3px solid transparent;
+    transform: rotate(-182deg)
+}
+
+.products__pricetag--amount {
+    transform: rotate(182deg);
+    color: var(--white);
+    font: 30px / 1.43 var(--titlesFont);
+    font-weight: bold;
+    position: absolute;
+    top: -1px;
+    right: 28px;
+}
+
+.products__item--color-black {
+    background: var(--black);
+}
+
+.products__item--color-black .products__pricetag {
+    border-bottom-color: var(--yellow);
+}
+
+.products__item--color-black .products__pricetag--amount {
+    color: var(--black);
+}
+
+.products__item--size-double {
+    width: 626px;
+    height: 544px;
+}
+
+.products__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.products__img {
+    max-width: 90%;
+    max-height: 100%;
+}
+
+.products__item:hover .products__desc {
+    transform: translateY(0%);
+}
+
+.products__desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 35px;
+    background: rgba(40, 40, 40, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+
+.products__desc--text {
+    font: 15px / 1.3 var(--descFont);
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    font: 24px / 1.43 var(--titlesFont);
+    color: var(--yellow);
+    background: var(--black);
+    padding: 4px 30px;
+    display: inline-block;
+}
+
+.btn:hover {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.collections {
+    margin-bottom: 140px;
+}
+
+.collections__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.collections__item {
+    flex: 1;
+    overflow: hidden;
+    margin-left: 30px;
+    width: 630px;
+    min-height: 480px;
+    background: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/pattern.png) center center / 100%;
+    position: relative;
+}
+
+.collections__item:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 176%;
+    width: 60%;
+    top: -17%;
+    left: -18%;
+    background: center center / contain no-repeat;
+}
+
+.collections__item--type-man:before {
+    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/collections/collection_man.png);
+}
+
+.collections__item--type-woman:before {
+    background-image: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/collections/collection_woman.png);
+    top: -31%;
+    width: 80%;
+    left: -25%;
+}
+
+.collections__title {
+    text-transform: uppercase;
+    font: 70px / 1 var(--titlesFont);
+    font-weight: bold;
+    margin-bottom: 40px;
+    margin-top: 0px;
+}
+
+.collections__link {
+    display: block;
+    padding: 74px 13% 74px 44%;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.collections__desc {
+    margin-bottom: 30px;
+    font-size: 15px;
+    position: relative;
+}
+
+.collections__link:hover .btn {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.container__bottom-menu {
+    width: 1100px;
+}
+
+.bottom-menu {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 120px;
+}
+
+.bottom-menu__submenu-title {
+    text-transform: uppercase;
+    font: 24px var(--titlesFont);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.bottom-menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+}
+
+.bottom-menu__submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-menu__item {
+    text-decoration: none;
+    font: 15px var(--descFont);
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.bottom-menu__item:hover {
+    color: var(--red);
+}
+
+.bottom-menu__item--address {
+    font: 15px / 1.5 var(--descFont);
+    color: var(--black);
+    margin-bottom: 36px;
+}
+
+.bottom-menu__item--phone {
+    margin-bottom: 15px;
+    color: var(--black)
+}
+
+.bottom-menu__item--mail {
+    color: var(--black);
+}
+
+.final__list {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 95px;
+    justify-content: center;
+}
+
+.final__item {
+    height: 200px;
+    width: 540px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+}
+
+.final__item--type-ads {
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--black);
+    text-decoration: none;
+    font: 50px var(--titlesFont);
+    color: var(--white);
+    margin-right: 30px;
+}
+
+.final__item--type-ads:hover {
+    color: var(--yellow);
+}
+
+.final__item--type-media {
+    background: url(/lostshirtsite/sitecontent/lostshirtpsd/images/web-ready/bg/pattern.png) center center / 400px;
+}
+
+.final__media--list {
+    display: flex;
+}
+
+.final__media--item {
+    width: 45px;
+    height: 45px;
+    margin-right: 50px;
+    display: flex;
+}
+
+.final__media--item:last-child {
+    margin-right: 0px;
+}
+
+.final__media--icon {
+    width: 100%;
+    height: 100%;
+}
+
+.final__media--item:hover .final__media--icon {
+    fill: var(--red)
+}
